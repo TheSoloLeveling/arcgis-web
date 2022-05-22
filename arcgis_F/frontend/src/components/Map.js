@@ -8,7 +8,7 @@ function Map() {
     useEffect( () => {
         let view;
 
-    loadModules(["esri/views/MapView", "esri/Map"], {
+    loadModules([ "esri/Map", "esri/views/MapView"], {
         css:true
     }).then(([MapView,Map]) => {
 
@@ -18,12 +18,12 @@ function Map() {
             basemap: "arcgis-topographic" // Basemap layer service
           });
   
-          const view = new MapView({
+        view = new MapView({
             map: map,
             center: [-118.805, 34.027], // Longitude, latitude
             zoom: 13, // Zoom level
-            container: MapEl // Div element
-          });
+            container: MapEl.current // Div element
+          })
     }) 
     
     
@@ -37,7 +37,7 @@ function Map() {
 
     return (
         <div style={{height:800}} ref={MapEl}>
-            Map Display :
+           
         </div>
     )
 }

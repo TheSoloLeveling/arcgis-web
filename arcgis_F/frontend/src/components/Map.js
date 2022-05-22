@@ -37,7 +37,7 @@ function Map() {
 
     return (
         <div style={{height:800}} ref={MapEl}>
-
+            Map Display :
         </div>
     )
 }

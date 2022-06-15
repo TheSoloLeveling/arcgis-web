@@ -1,0 +1,49 @@
+import React, {useRef, useEffect, useState} from 'react'
+import Map from "@arcgis/core/Map"
+import MapView from "@arcgis/core/views/MapView"
+import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer"
+import MapWidgets from './MapWidgets'
+import MapGraphics from './MapGraphics'
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer'
+
+function MapT() {
+
+    const mapRef=useRef(null)
+    const [view, setView]=useState(null)
+
+    const glResult1 = new GraphicsLayer({
+      id: "glResult1"
+    });
+
+    const glResult2 = new GraphicsLayer({
+      id: "glResult2"
+    });
+    
+    useEffect(() => {
+      const layer = new FeatureLayer({
+        url: "https://services5.arcgis.com/h7RNMTVRJXnslYDk/arcgis/rest/services/time_series_covid19_confirmed_global/FeatureServer/0"
+      });
+      new MapView({
+        container: mapRef.current,
+        map: new Map({
+            basemap: "dark-gray-vector",
+            layers: [layer, glResult2],
+        }),
+        zoom: 3,
+      }).when((view) => setView(view));
+
+    }, []);
+    
+    return (
+        <div style={{height:800}} ref={mapRef}>
+          {view && 
+            <>
+              <MapWidgets view={view}/> 
+              
+            </>
+          }
+        </div>
+    )
+}
+
+export default MapT

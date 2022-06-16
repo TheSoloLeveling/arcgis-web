@@ -35,7 +35,8 @@ function MapT() {
     }, []);
     
     return (
-        <div style={{height:800}} ref={mapRef}>
+      
+        <div className='col-span-2 col-start-2 border shadow' style={{height:700 }} ref={mapRef}>
           {view && 
             <>
               <MapWidgets view={view}/> 

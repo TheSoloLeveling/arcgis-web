@@ -11,13 +11,6 @@ function MapT() {
     const mapRef=useRef(null)
     const [view, setView]=useState(null)
 
-    const glResult1 = new GraphicsLayer({
-      id: "glResult1"
-    });
-
-    const glResult2 = new GraphicsLayer({
-      id: "glResult2"
-    });
     
     useEffect(() => {
       const layer = new FeatureLayer({
@@ -27,7 +20,7 @@ function MapT() {
         container: mapRef.current,
         map: new Map({
             basemap: "dark-gray-vector",
-            layers: [layer, glResult2],
+            layers: [layer],
         }),
         zoom: 3,
       }).when((view) => setView(view));
@@ -36,9 +29,10 @@ function MapT() {
     
     return (
       
-        <div className='col-span-2 col-start-2 border shadow' style={{height:700 }} ref={mapRef}>
+        <div className='col-span-2 col-start-2 border shadow' style={{height:700 }} ref={mapRef}> 
           {view && 
             <>
+            {console.log(view)}
               <MapWidgets view={view}/> 
               
             </>

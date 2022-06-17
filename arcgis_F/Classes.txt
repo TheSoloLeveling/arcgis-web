@@ -1,0 +1,23 @@
+MapT (1..1) ==> MapView (1..1)	==> Map(1..1)
+				==> MapLayers (1..*)
+				==> MapWidgets (1..1)
+
+
+MapWidgets ==> Legend (interface)
+	   ==> Home (interface)
+	   ==> Legend (interface)
+	   ==> ScaleBar (interface)
+	   ==> Expand (interface)
+	   ==> Histogram (interface)	
+
+MapLayers  ==> LayerTable
+	   ==> FeatureLayer(interface)
+
+
+LayerTable  ==> FeatureTable(interface)
+
+
+App 	   ==> MapT
+	   ==> Header
+	   ==> Card
+	   ==> Footer

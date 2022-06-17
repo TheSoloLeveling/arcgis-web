@@ -3,10 +3,10 @@ import React from 'react'
 
 const Header = () => {
   return (
-<nav class="flex items-center justify-between flex-wrap bg-twitter p-6 w-full z-10 sticky top-0">
-		<div class="flex items-center flex-shrink-0 text-white mr-6">
+<nav class="flex items-center justify-between flex-wrap bg-twitter p-2 w-full z-10 sticky top-0">
+		<div class="flex items-center flex-shrink-0 text-white mr-4">
 			<a class="text-white no-underline hover:text-white hover:no-underline" href="#">
-				<span class="text-2xl pl-2"><i class="em em-grinning"></i> Twitter COVID 19 Dashboard</span>
+				<span class="text-2xl pl-2"><i class="em em-grinning"></i> Twitter Sentiment Analysis Dashboard 2022</span>
 			</a>
 		</div>
 
@@ -22,13 +22,7 @@ const Header = () => {
 					<a class="inline-block py-2 px-4 text-white no-underline" href="#">Active</a>
 				</li>
 				<li class="mr-3">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">link</a>
-				</li>
-				<li class="mr-3">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">link</a>
-				</li>
-				<li class="mr-3">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">link</a>
+					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Home</a>
 				</li>
 			</ul>
 		</div>
